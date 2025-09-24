@@ -1,4 +1,4 @@
-import Header from "../components/layout/Header";
+import Header from "@/components/layout/Header";
 import PostCard from "../components/common/PostCard";
 import { useEffect, useState } from "react";
 import { PostProps } from "../interfaces";
