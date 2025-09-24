@@ -4,14 +4,6 @@ import { useEffect, useState } from "react";
 import { PostProps } from "../interfaces";
 
 export default function Posts() {
-  const [posts, setPosts] = useState<PostProps[]>([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
-  }, []);
-
   return (
     <div>
       <Header />
@@ -28,4 +20,16 @@ export default function Posts() {
       </main>
     </div>
   );
+}
+export async function getStaticProps() {
+  const res = await fetch(
+    "https://jsonplaceholder.typicode.com/posts?_limit=10"
+  );
+  const data: PostProps[] = await res.json();
+
+  return {
+    props: {
+      posts: data,
+    },
+  };
 }
