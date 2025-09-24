@@ -4,13 +4,6 @@ import { useEffect, useState } from "react";
 import { UserProps } from "../interfaces";
 
 export default function Users() {
-  const [users, setUsers] = useState<UserProps[]>([]);
-
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => setUsers(data));
-  }, []);
   return (
     <div>
       <Header />
@@ -27,4 +20,14 @@ export default function Users() {
       </main>
     </div>
   );
+}
+export async function getStaticProps() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data: UserProps[] = await res.json();
+
+  return {
+    props: {
+      users: data,
+    },
+  };
 }
