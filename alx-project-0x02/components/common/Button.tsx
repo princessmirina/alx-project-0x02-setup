@@ -1,5 +1,4 @@
-
-import { ButtonProps } from "../..interfaces";
+import { type ButtonProps } from "../..interfaces";
 
 const Button = ({ size, shape, children, onClick }: ButtonProps) => {
   const sizeClasses =
@@ -11,7 +10,7 @@ const Button = ({ size, shape, children, onClick }: ButtonProps) => {
 
   return (
     <button
-      className={${sizeClasses} bg-green-500 text-white ${shape} hover:bg-green-600 transition}
+      className={`${sizeClasses} bg-green-500 text-white ${shape} hover:bg-green-600 transition`}
       onClick={onClick}
     >
       {children}
