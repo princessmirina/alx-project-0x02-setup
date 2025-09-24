@@ -8,4 +8,3 @@ export default function Card({ title, content }: CardProps) {
     </div>
   );
 }
-export default Card;
