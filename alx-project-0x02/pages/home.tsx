@@ -3,7 +3,7 @@ import Header from "../components/layout/Header";
 import Card from "../components/common/Card";
 import PostModal from "../components/common/PostModal";
 
-export default function HomePage() {
+export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -13,7 +13,7 @@ export default function HomePage() {
 
       <h1 className="text-2xl font-bold mb-4">Welcome to the Home Page</h1>
 
-      {/* Card Components */}
+      {/* ✅ Card Components with props */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card title="Card One" content="This is the first card content." />
         <Card title="Card Two" content="This is the second card content." />
