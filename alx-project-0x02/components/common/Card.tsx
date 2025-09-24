@@ -1,13 +1,11 @@
-import React from "react";
 import { CardProps } from "../../interfaces";
 
-const Card = ({ title, content }: CardProps) => {
+export default function Card({ title, content }: CardProps) {
   return (
-    <div className="border p-4 rounded shadow hover:shadow-lg transition">
-      <h2 className="text-xl font-bold">{title}</h2>
-      <p className="mt-2">{content}</p>
+    <div className="border rounded-lg shadow-md p-4" role="article">
+      <h2 className="text-xl font-bold mb-2">{title}</h2>
+      <p className="text-gray-700">{content}</p>
     </div>
   );
-};
-
+}
 export default Card;
